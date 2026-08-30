@@ -1,0 +1,402 @@
+@import './styles/smarttour-scoped.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer utilities {
+  .holiday-hero-gradient {
+    background: linear-gradient(180deg, #9AE6EC 0%, #BAF2E9 40%, #E0F7F6 80%, #FFFFFF 100%);
+  }
+  .capsule-shadow {
+    box-shadow: 0 20px 45px -10px rgba(14, 165, 233, 0.18), 0 4px 20px -2px rgba(15, 23, 42, 0.08);
+  }
+  .glass-capsule {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+  }
+  .btn-primary-blue {
+    background: #1D63FF;
+    color: white;
+    transition: all 0.2s ease-in-out;
+  }
+  .btn-primary-blue:hover {
+    background: #154cdb;
+    box-shadow: 0 10px 25px -4px rgba(29, 99, 255, 0.4);
+  }
+  .font-holiday {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+/* ---- Sidebar Layout Utilities ---- */
+.sidebar-glass {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-right: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.sidebar-nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 0.875rem;
+  border-radius: 0.875rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #475569;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.sidebar-nav-item:hover {
+  background: #F1F5F9;
+  color: #1E293B;
+  transform: translateX(2px);
+}
+
+.sidebar-nav-item.active {
+  background: linear-gradient(135deg, #2563EB, #4F46E5);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px -2px rgba(37, 99, 235, 0.4);
+  font-weight: 800;
+}
+
+.sidebar-nav-item.active .sidebar-icon {
+  color: #FFFFFF;
+}
+
+.sidebar-nav-item.special:not(.active) {
+  background: #EFF6FF;
+  color: #1D4ED8;
+  border: 1px solid #BFDBFE;
+}
+
+.sidebar-icon {
+  flex-shrink: 0;
+  width: 1.125rem;
+  height: 1.125rem;
+  transition: color 0.15s ease;
+}
+
+/* Sidebar transition for main content padding/margin */
+.main-content-transition {
+  transition: padding-left 0.35s cubic-bezier(0.16, 1, 0.3, 1), margin-left 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Scrollbar hiding for sidebar */
+.sidebar-scroll::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.sidebar-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* Tooltip for collapsed sidebar */
+.sidebar-tooltip {
+  position: absolute;
+  left: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%);
+  background: #0F172A;
+  color: #FFFFFF;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.sidebar-nav-item:hover .sidebar-tooltip {
+  opacity: 1;
+}
+
+/* Custom Clean Scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #F8FAFC;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Leaflet Map Light Overrides */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 1.5rem;
+  background: #f1f5f9 !important;
+}
+
+/* ============================================================
+   SmartTourAI — Unified Design System Utilities
+   ONE design system for ALL dashboards.
+   ============================================================ */
+
+/* --- Design System Font Aliases --- */
+.font-heritage {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* --- Design System: Page Section Header Card --- */
+.ds-page-header {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 1.5rem;
+  padding: 1.25rem;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* --- Design System: Card --- */
+.ds-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 1.5rem;
+  padding: 1.25rem;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.ds-card-hover:hover {
+  border-color: #CBD5E1;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08);
+}
+
+/* --- Design System: Icon Container --- */
+.ds-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  border-radius: 1rem;
+  flex-shrink: 0;
+}
+
+/* --- Design System: Buttons --- */
+.ds-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  border: none;
+  outline: none;
+}
+
+.ds-btn:active {
+  transform: scale(0.97);
+}
+
+.ds-btn-primary {
+  background: linear-gradient(135deg, #2563EB, #4F46E5);
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px -2px rgba(37, 99, 235, 0.3);
+}
+
+.ds-btn-primary:hover {
+  background: linear-gradient(135deg, #1D4ED8, #4338CA);
+  box-shadow: 0 6px 16px -2px rgba(37, 99, 235, 0.4);
+}
+
+.ds-btn-secondary {
+  background: #F1F5F9;
+  color: #334155;
+  border: 1px solid #E2E8F0;
+}
+
+.ds-btn-secondary:hover {
+  background: #E2E8F0;
+  color: #1E293B;
+}
+
+.ds-btn-ghost {
+  background: transparent;
+  color: #475569;
+}
+
+.ds-btn-ghost:hover {
+  background: #F1F5F9;
+  color: #1E293B;
+}
+
+.ds-btn-danger {
+  background: linear-gradient(135deg, #DC2626, #E11D48);
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px -2px rgba(220, 38, 38, 0.3);
+}
+
+.ds-btn-danger:hover {
+  background: linear-gradient(135deg, #B91C1C, #BE123C);
+}
+
+/* --- Design System: Inputs --- */
+.ds-input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.75rem;
+  border: 1px solid #E2E8F0;
+  background: #FFFFFF;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #0F172A;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.ds-input:focus {
+  border-color: #2563EB;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.ds-input::placeholder {
+  color: #94A3B8;
+  font-weight: 500;
+}
+
+/* --- Design System: Tab Group --- */
+.ds-tab-group {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: #F1F5F9;
+  padding: 0.25rem;
+  border-radius: 1rem;
+  border: 1px solid #E2E8F0;
+}
+
+.ds-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  outline: none;
+  white-space: nowrap;
+  color: #475569;
+  background: transparent;
+}
+
+.ds-tab:hover:not(.ds-tab-active) {
+  background: rgba(226, 232, 240, 0.6);
+  color: #1E293B;
+}
+
+.ds-tab-active {
+  background: #2563EB;
+  color: #FFFFFF;
+  font-weight: 800;
+  box-shadow: 0 2px 8px -1px rgba(37, 99, 235, 0.3);
+}
+
+/* --- Design System: Labels --- */
+.ds-label {
+  font-size: 0.625rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #94A3B8;
+}
+
+/* --- Design System: Badge --- */
+.ds-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.625rem;
+  border-radius: 9999px;
+  font-size: 0.625rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* --- Design System: Page Title --- */
+.ds-page-title {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #0F172A;
+  letter-spacing: -0.025em;
+  line-height: 1.3;
+}
+
+.ds-page-desc {
+  font-size: 0.75rem;
+  color: #64748B;
+  font-weight: 500;
+  margin-top: 0.125rem;
+}
+
+/* --- Design System: Section Title --- */
+.ds-section-title {
+  font-size: 0.875rem;
+  font-weight: 800;
+  color: #0F172A;
+}
+
+/* --- Design System: Body Text --- */
+.ds-body {
+  font-size: 0.75rem;
+  color: #475569;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* ============================================================
+   Accessibility: Respect Reduced Motion Preferences
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================================
+   Prevent Horizontal Overflow
+   ============================================================ */
+html, body, #root {
+  overflow-x: hidden;
+  max-width: 100vw;
+}

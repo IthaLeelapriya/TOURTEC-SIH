@@ -1,0 +1,40 @@
+# Node modules
+node_modules/
+*/node_modules/
+
+# Legacy / Spring backend
+backend-spring/
+.metadata/
+
+# Production builds
+dist/
+build/
+*/dist/
+*/build/
+
+# Environment Variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+backend/.env
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS metadata
+.DS_Store
+Thumbs.db

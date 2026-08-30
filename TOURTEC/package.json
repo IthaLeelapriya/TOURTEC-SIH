@@ -1,0 +1,19 @@
+{
+  "name": "tourtec-suite",
+  "version": "2.5.0",
+  "description": "TOURTEC INDIA - Incredible India Smart Tourism Suite",
+  "scripts": {
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "preview": "npm --prefix frontend run preview"
+  },
+  "keywords": [
+    "tourism",
+    "smart-travel",
+    "spring-boot",
+    "react",
+    "geospatial"
+  ],
+  "author": "TOURTEC Team",
+  "license": "MIT"
+}

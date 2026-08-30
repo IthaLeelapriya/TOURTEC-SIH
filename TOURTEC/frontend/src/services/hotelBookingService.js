@@ -1,0 +1,408 @@
+// Hotel & Stay Booking Service for TOURTEC India
+
+export const HOTEL_DATABASE = {
+  hyderabad: [
+    {
+      id: 'hyd-h1',
+      name: 'Taj Falaknuma Palace',
+      city: 'Hyderabad',
+      type: 'luxury',
+      tagline: 'Former palace of the Nizam of Hyderabad perched 2,000 feet above the city',
+      rating: 4.9,
+      reviewsCount: 3420,
+      priceINR: 32000,
+      originalPriceINR: 38000,
+      discountPercent: 15,
+      image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800&auto=format&fit=crop',
+      distanceToLandmark: '4.2 km from Charminar',
+      amenities: ['Royal Nizam Heritage Tour', 'Fine Dining Italian & Hyderabadi', 'Jiva Spa & Pool', 'Free Airport Rolls-Royce Transfer'],
+      badge: '👑 Royal Palace Stay',
+      bookingUrl: 'https://www.tajhotels.com/'
+    },
+    {
+      id: 'hyd-h2',
+      name: 'ITC Kohenur, A Luxury Collection Hotel',
+      city: 'Hyderabad',
+      type: 'luxury',
+      tagline: 'Modern architectural marvel overlooking Durgam Cheruvu Lake in Hitech City',
+      rating: 4.8,
+      reviewsCount: 2890,
+      priceINR: 11500,
+      originalPriceINR: 14000,
+      discountPercent: 18,
+      image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=800&auto=format&fit=crop',
+      distanceToLandmark: '8.5 km from Golconda Fort',
+      amenities: ['Lake View Balcony', 'Infinity Rooftop Pool', 'Rooftop Bar', 'High-Speed WiFi'],
+      badge: '🌟 Lakefront Luxury',
+      bookingUrl: 'https://www.itchotels.com/'
+    },
+    {
+      id: 'hyd-h3',
+      name: 'Mercure Hyderabad KCP',
+      city: 'Hyderabad',
+      type: 'boutique',
+      tagline: 'Contemporary 4-star hotel in Banjara Hills near Hussain Sagar Lake',
+      rating: 4.6,
+      reviewsCount: 1940,
+      priceINR: 4200,
+      originalPriceINR: 5200,
+      discountPercent: 20,
+      image: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=800&auto=format&fit=crop',
+      distanceToLandmark: '2.5 km from Birla Mandir',
+      amenities: ['City View AC Rooms', 'Free Buffet Breakfast', 'Fitness Center', 'Metro Station Walkable'],
+      badge: '☕ Best Value Boutique',
+      bookingUrl: 'https://www.makemytrip.com/hotels/'
+    },
+    {
+      id: 'hyd-h4',
+      name: 'The Park Hyderabad',
+      city: 'Hyderabad',
+      type: 'boutique',
+      tagline: 'Designed with jewelry & gemstone themes overlooking Hussain Sagar Lake',
+      rating: 4.5,
+      reviewsCount: 2150,
+      priceINR: 4800,
+      originalPriceINR: 6000,
+      discountPercent: 20,
+      image: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800&auto=format&fit=crop',
+      distanceToLandmark: '1.2 km from Hussain Sagar Lake',
+      amenities: ['Lake View Infinity Pool', 'Verandah 24/7 Restaurant', 'Free High-Speed WiFi', 'Spa & Wellness'],
+      badge: '💎 Designer Stay',
+      bookingUrl: 'https://www.booking.com/'
+    },
+    {
+      id: 'hyd-h5',
+      name: 'Zostel Hyderabad (Hitech City)',
+      city: 'Hyderabad',
+      type: 'hostel',
+      tagline: 'Vibrant backpacker hostel with community rooftop, gaming zone & coworking',
+      rating: 4.7,
+      reviewsCount: 1280,
+      priceINR: 750,
+      originalPriceINR: 950,
+      discountPercent: 21,
+      image: 'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?q=80&w=800&auto=format&fit=crop',
+      distanceToLandmark: '6.0 km from Golconda Fort',
+      amenities: ['Air-Conditioned Dorms & Private Pods', 'Free High-Speed WiFi', 'Community Kitchen', 'Rooftop Cafe & Events'],
+      badge: '🎒 Backpacker Top Pick',
+      bookingUrl: 'https://www.zostel.com/'
+    },
+    {
+      id: 'hyd-h6',
+      name: 'Taj Mahal Hotel (Abids Heritage Stay)',
+      city: 'Hyderabad',
+      type: 'dharamshala',
+      tagline: 'Historic pure-vegetarian hotel operating since 1948 near Charminar',
+      rating: 4.4,
+      reviewsCount: 1650,
+      priceINR: 1600,
+      originalPriceINR: 2000,
+      discountPercent: 20,
+      image: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=800&auto=format&fit=crop',
+      distanceToLandmark: '2.8 km from Charminar',
+      amenities: ['Authentic South Indian Udupi Restaurant', 'Clean AC Family Rooms', '24/7 Room Service', 'Walkable to Railway Station'],
+      badge: '🕉️ Heritage Veg Stay',
+      bookingUrl: 'https://www.makemytrip.com/'
+    }
+  ],
+  vijayawada: [
+    {
+      id: 'vja-h1',
+      name: 'Novotel Vijayawada Varun',
+      city: 'Vijayawada',
+      type: 'luxury',
+      tagline: '5-star international luxury hotel with panoramic views of Krishna River & city',
+      rating: 4.8,
+      reviewsCount: 2210,
+      priceINR: 5800,
+      originalPriceINR: 7200,
+      discountPercent: 19,
+      image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800&auto=format&fit=crop',
+      distanceToLandmark: '3.5 km from Kanaka Durga Temple',
+      amenities: ['Rooftop Infinity Pool', 'Food Exchange Restaurant', 'Spa & Fitness Center', 'Executive Lounge'],
+      badge: '🌟 5-Star City View',
+      bookingUrl: 'https://all.accor.com/'
+    },
+    {
+      id: 'vja-h2',
+      name: 'The Gateway Hotel M G Road (Taj Group)',
+      city: 'Vijayawada',
+      type: 'luxury',
+      tagline: 'Full-service business & heritage hotel on central MG Road',
+      rating: 4.6,
+      reviewsCount: 1840,
+      priceINR: 4600,
+      originalPriceINR: 5600,
+      discountPercent: 18,
+      image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=800&auto=format&fit=crop',
+      distanceToLandmark: '4.0 km from Prakasam Barrage',
+      amenities: ['Gourmet Andhra Dining', 'Swimming Pool & Fitness', 'Free High-Speed WiFi', '24/7 Concierge'],
+      badge: '👑 Taj Hospitality',
+      bookingUrl: 'https://www.tajhotels.com/'
+    },
+    {
+      id: 'vja-h3',
+      name: 'APTDC Haritha Resort (Bhavani Island)',
+      city: 'Vijayawada',
+      type: 'boutique',
+      tagline: 'Riverfront eco-island cottages accessible by scenic boat ferry on Krishna River',
+      rating: 4.4,
+      reviewsCount: 1420,
+      priceINR: 2200,
+      originalPriceINR: 2800,
+      discountPercent: 21,
+      image: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=800&auto=format&fit=crop',
+      distanceToLandmark: 'Located on Bhavani Island',
+      amenities: ['Riverfront Cottages', 'Speedboat Transfer Included', 'Lush Garden Promenade', 'Andhra Restaurant'],
+      badge: '🏝️ River Island Resort',
+      bookingUrl: 'https://tourism.ap.gov.in/'
+    },
+    {
+      id: 'vja-h4',
+      name: 'Sri Durga Malleswara Devasthanam Pilgrim Choultry',
+      city: 'Vijayawada',
+      type: 'dharamshala',
+      tagline: 'Official Devasthanam accommodation for devotees on Indrakeeladri Hill',
+      rating: 4.5,
+      reviewsCount: 3100,
+      priceINR: 400,
+      originalPriceINR: 600,
+      discountPercent: 33,
+      image: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=800&auto=format&fit=crop',
+      distanceToLandmark: 'Inside Temple Complex (Indrakeeladri)',
+      amenities: ['Direct Darshan Queue Access', 'Free Annadanam Meals', 'Clean AC/Non-AC Rooms', 'Locker & Luggage Room'],
+      badge: '🕉️ Temple Devasthanam',
+      bookingUrl: 'https://kanakadurgamma.org/'
+    }
+  ],
+  varanasi: [
+    {
+      id: 'vns-h1',
+      name: 'BrijRama Palace, Varanasi (Heritage Grand)',
+      city: 'Varanasi',
+      type: 'luxury',
+      tagline: '18th-century royal palace built directly on Darbhanga Ghat accessible by royal boat',
+      rating: 4.9,
+      reviewsCount: 2980,
+      priceINR: 24000,
+      originalPriceINR: 29000,
+      discountPercent: 17,
+      image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800&auto=format&fit=crop',
+      distanceToLandmark: 'Directly on Darbhanga Ghat (200m from Dashashwamedh)',
+      amenities: ['Private Royal Bajra Boat Transfer', 'Sunrise Classical Shehnai Concert', 'Ganga View Balconies', 'Pure Satvik Dining'],
+      badge: '👑 Royal Ghat Palace',
+      bookingUrl: 'https://www.brijhotels.com/'
+    },
+    {
+      id: 'vns-h2',
+      name: 'Taj Ganges, Varanasi',
+      city: 'Varanasi',
+      type: 'luxury',
+      tagline: 'Set in 40 acres of lush verdant gardens in the peaceful Cantonment area',
+      rating: 4.8,
+      reviewsCount: 2450,
+      priceINR: 9500,
+      originalPriceINR: 12000,
+      discountPercent: 20,
+      image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=800&auto=format&fit=crop',
+      distanceToLandmark: '4.8 km from Kashi Vishwanath Corridor',
+      amenities: ['Palatial Greenery', 'Outdoor Swimming Pool', 'Varuna Gourmet Indian Dining', 'Jiva Spa'],
+      badge: '🌟 5-Star Garden Retreat',
+      bookingUrl: 'https://www.tajhotels.com/'
+    },
+    {
+      id: 'vns-h3',
+      name: 'Zostel Varanasi (Near Assi Ghat)',
+      city: 'Varanasi',
+      type: 'hostel',
+      tagline: 'Top-rated backpacker hostel with vibrant rooftop cafe and evening music sessions',
+      rating: 4.7,
+      reviewsCount: 3120,
+      priceINR: 550,
+      originalPriceINR: 750,
+      discountPercent: 26,
+      image: 'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?q=80&w=800&auto=format&fit=crop',
+      distanceToLandmark: '350m from Assi Ghat (Subah-e-Banaras)',
+      amenities: ['AC Bunk Pods & Private Rooms', 'Rooftop Ganga Breeze Cafe', 'Daily Morning Ghat Walking Tour', 'High-Speed WiFi'],
+      badge: '🎒 Backpacker #1 Choice',
+      bookingUrl: 'https://www.zostel.com/'
+    },
+    {
+      id: 'vns-h4',
+      name: 'Kashi Vishwanath Devasthanam Guest House',
+      city: 'Varanasi',
+      type: 'dharamshala',
+      tagline: 'Official temple trust dharamshala inside the new Kashi Corridor promenade',
+      rating: 4.6,
+      reviewsCount: 2400,
+      priceINR: 500,
+      originalPriceINR: 800,
+      discountPercent: 37,
+      image: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=800&auto=format&fit=crop',
+      distanceToLandmark: 'Direct Corridor Entry to Sanctum Gate #4',
+      amenities: ['Direct Gate 4 Corridor Access', 'Clean AC Devotee Rooms', 'Temple Mahaprasadam Facility', 'Senior Citizen Battery Carts'],
+      badge: '🕉️ Temple Trust Stay',
+      bookingUrl: 'https://shrikashivishwanath.org/'
+    }
+  ],
+  tirupati: [
+    {
+      id: 'tpt-h1',
+      name: 'Fortune Select Grand Ridge (ITC Group)',
+      city: 'Tirupati',
+      type: 'luxury',
+      tagline: 'Upscale 5-star hotel with panoramic views of the sacred Tirumala Hills',
+      rating: 4.8,
+      reviewsCount: 2310,
+      priceINR: 5200,
+      originalPriceINR: 6500,
+      discountPercent: 20,
+      image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800&auto=format&fit=crop',
+      distanceToLandmark: '12 km from Tirumala Hilltop',
+      amenities: ['Hill-View Swimming Pool', 'Rainbow Multi-Cuisine Vegetarian', 'Free TTD Transit Desk', 'Spa & Fitness'],
+      badge: '🌟 5-Star Hill View',
+      bookingUrl: 'https://www.itchotels.com/'
+    },
+    {
+      id: 'tpt-h2',
+      name: 'TTD Srinivasam Complex (Tirupati Central)',
+      city: 'Tirupati',
+      type: 'dharamshala',
+      tagline: 'Premier official TTD pilgrim complex directly opposite Tirupati Central Bus Station',
+      rating: 4.5,
+      reviewsCount: 5200,
+      priceINR: 300,
+      originalPriceINR: 500,
+      discountPercent: 40,
+      image: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=800&auto=format&fit=crop',
+      distanceToLandmark: 'Direct Ghat Road Bus Terminal',
+      amenities: ['Official TTD Darshan Ticket Counters', 'Free Annaprasadam', 'Clean AC & Non-AC Rooms', 'Locker Counters'],
+      badge: '🕉️ Official TTD Complex',
+      bookingUrl: 'https://tirupatibalaji.ap.gov.in/'
+    }
+  ],
+  agra: [
+    {
+      id: 'agr-h1',
+      name: 'The Oberoi Amarvilas, Agra',
+      city: 'Agra',
+      type: 'luxury',
+      tagline: 'Every room offers uninterrupted, iconic views of the Taj Mahal just 600m away',
+      rating: 5.0,
+      reviewsCount: 3890,
+      priceINR: 38000,
+      originalPriceINR: 45000,
+      discountPercent: 15,
+      image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800&auto=format&fit=crop',
+      distanceToLandmark: '600m from Taj Mahal East Gate',
+      amenities: ['Direct Taj-View Balconies', 'Private Golf Buggy to East Gate', 'Mughal Architecture Courtyard Pool', 'Oberoi Spa'],
+      badge: '👑 World-Class Taj View',
+      bookingUrl: 'https://www.oberoihotels.com/'
+    },
+    {
+      id: 'agr-h2',
+      name: 'Moustache Hostel Agra',
+      city: 'Agra',
+      type: 'hostel',
+      tagline: 'Budget boutique backpacker stay with rooftop swimming pool facing Taj Mahal',
+      rating: 4.6,
+      reviewsCount: 1740,
+      priceINR: 650,
+      originalPriceINR: 850,
+      discountPercent: 23,
+      image: 'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?q=80&w=800&auto=format&fit=crop',
+      distanceToLandmark: '900m from Taj Mahal East Gate',
+      amenities: ['Rooftop Taj-View Pool', 'AC Bunk Pods & Private Rooms', 'Evening Chai & Stories', 'High-Speed WiFi'],
+      badge: '🎒 Rooftop Taj Pool',
+      bookingUrl: 'https://www.moustachescapes.com/'
+    }
+  ]
+};
+
+// Function to fetch or dynamically generate hotels for ANY searched place in India
+export const getHotelsForLocation = (locationName = 'Hyderabad') => {
+  const clean = (locationName || 'Hyderabad').toLowerCase();
+
+  let matchedCity = 'hyderabad';
+  if (clean.includes('hyderabad')) matchedCity = 'hyderabad';
+  else if (clean.includes('vijayawada')) matchedCity = 'vijayawada';
+  else if (clean.includes('varanasi')) matchedCity = 'varanasi';
+  else if (clean.includes('tirupati')) matchedCity = 'tirupati';
+  else if (clean.includes('agra')) matchedCity = 'agra';
+  else {
+    // Generate dynamic hotels for any typed town
+    const cityName = locationName.split(',')[0].trim();
+    return [
+      {
+        id: `dyn-h1-${cityName}`,
+        name: `The Grand Heritage Hotel & Resort, ${cityName}`,
+        city: cityName,
+        type: 'luxury',
+        tagline: `Premier 4-star luxury stay with full modern amenities in central ${cityName}`,
+        rating: 4.8,
+        reviewsCount: 1450,
+        priceINR: 4200,
+        originalPriceINR: 5200,
+        discountPercent: 19,
+        image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800&auto=format&fit=crop',
+        distanceToLandmark: `1.5 km from ${cityName} city center`,
+        amenities: ['Free Buffet Breakfast', 'Swimming Pool & Spa', 'High-Speed WiFi', '24/7 Room Service'],
+        badge: '🌟 Top Rated Stay',
+        bookingUrl: 'https://www.makemytrip.com/hotels/'
+      },
+      {
+        id: `dyn-h2-${cityName}`,
+        name: `${cityName} Heritage Homestay & Haveli`,
+        city: cityName,
+        type: 'boutique',
+        tagline: `Charming traditional guest house close to major sights and local markets`,
+        rating: 4.6,
+        reviewsCount: 890,
+        priceINR: 2100,
+        originalPriceINR: 2600,
+        discountPercent: 19,
+        image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=800&auto=format&fit=crop',
+        distanceToLandmark: `800m from main temple/bazaar`,
+        amenities: ['Authentic Home-cooked Meals', 'Air Conditioned Rooms', 'Free Travel Desk & Guide', 'High-Speed WiFi'],
+        badge: '🏡 Authentic Homestay',
+        bookingUrl: 'https://www.booking.com/'
+      },
+      {
+        id: `dyn-h3-${cityName}`,
+        name: `Backpacker Pods & Hostel ${cityName}`,
+        city: cityName,
+        type: 'hostel',
+        tagline: `Clean, modern budget accommodation with community lounge and coworking`,
+        rating: 4.5,
+        reviewsCount: 650,
+        priceINR: 600,
+        originalPriceINR: 800,
+        discountPercent: 25,
+        image: 'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?q=80&w=800&auto=format&fit=crop',
+        distanceToLandmark: `Near ${cityName} Railway Station`,
+        amenities: ['AC Dorms & Private Rooms', 'Free High-Speed WiFi', 'Community Kitchen', '24/7 Security & Lockers'],
+        badge: '🎒 Budget Favorite',
+        bookingUrl: 'https://www.zostel.com/'
+      },
+      {
+        id: `dyn-h4-${cityName}`,
+        name: `${cityName} Pilgrims Dharamshala & Yatri Nivas`,
+        city: cityName,
+        type: 'dharamshala',
+        tagline: `Affordable, peaceful temple guest house for families and pilgrims`,
+        rating: 4.4,
+        reviewsCount: 1100,
+        priceINR: 450,
+        originalPriceINR: 650,
+        discountPercent: 30,
+        image: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=800&auto=format&fit=crop',
+        distanceToLandmark: `Walking distance to Main Shrine`,
+        amenities: ['Pure Vegetarian Canteen', 'Hot Water & AC Rooms', 'Safe Luggage Counter', 'Temple Darshan Desk'],
+        badge: '🕉️ Devotee Guest House',
+        bookingUrl: 'https://www.makemytrip.com/'
+      }
+    ];
+  }
+
+  return HOTEL_DATABASE[matchedCity] || HOTEL_DATABASE.hyderabad;
+};

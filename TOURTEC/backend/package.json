@@ -1,0 +1,15 @@
+{
+  "name": "tourtec-backend-api",
+  "version": "1.0.0",
+  "description": "PostgreSQL API Backend for TOURTEC User Auth & Bookings",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.4.2",
+    "express": "^4.19.2",
+    "pg": "^8.11.5"
+  }
+}
