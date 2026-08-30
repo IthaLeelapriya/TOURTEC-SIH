@@ -27,7 +27,8 @@ import {
   DEFAULT_TRAVEL_PROFILE
 } from '../types/smartTourTypes';
 
-const _smartApiHost = import.meta.env.VITE_API_URL ? `https://${import.meta.env.VITE_API_URL}` : '';
+const _rawUrl = import.meta.env.VITE_API_URL || '';
+const _smartApiHost = _rawUrl ? (_rawUrl.startsWith('http://') || _rawUrl.startsWith('https://') ? _rawUrl : `https://${_rawUrl}`) : '';
 const API_BASE_URL = `${_smartApiHost}/api`;
 
 // Local storage keys

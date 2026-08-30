@@ -5,7 +5,11 @@
   "scripts": {
     "dev": "npm --prefix frontend run dev",
     "build": "npm --prefix frontend run build",
-    "preview": "npm --prefix frontend run preview"
+    "preview": "npm --prefix frontend run preview",
+    "build:full": "npm --prefix frontend install && npm --prefix frontend run build && npm --prefix backend install",
+    "start": "npm --prefix backend start",
+    "backend:start": "npm --prefix backend start",
+    "backend:install": "npm --prefix backend install"
   },
   "keywords": [
     "tourism",

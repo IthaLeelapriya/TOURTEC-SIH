@@ -10,11 +10,20 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const IS_PRODUCTION = process.env.NODE_ENV === 'production';
 
-// CORS Configuration — restrict in production, permissive in development
+// CORS Configuration — support production domains, render.com subdomains, and local dev
 const corsOptions = {
-  origin: IS_PRODUCTION
-    ? (process.env.FRONTEND_URL ? [process.env.FRONTEND_URL, `https://${process.env.FRONTEND_URL}`] : '*')
-    : '*',
+  origin: (origin, callback) => {
+    if (!origin) return callback(null, true);
+    if (!IS_PRODUCTION || !process.env.FRONTEND_URL || process.env.FRONTEND_URL === '*') {
+      return callback(null, true);
+    }
+    const cleanFrontend = process.env.FRONTEND_URL.replace(/^https?:\/\//, '').replace(/\/$/, '');
+    const cleanOrigin = origin.replace(/^https?:\/\//, '').replace(/\/$/, '');
+    if (cleanOrigin.includes(cleanFrontend) || origin.endsWith('.onrender.com') || cleanOrigin === 'localhost:3000' || cleanOrigin === 'localhost:5173') {
+      return callback(null, true);
+    }
+    return callback(null, true);
+  },
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true

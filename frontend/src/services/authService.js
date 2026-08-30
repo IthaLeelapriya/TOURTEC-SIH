@@ -1,6 +1,7 @@
 // Frontend Authentication & User Registry Service
 
-const API_BASE = import.meta.env.VITE_API_URL ? `https://${import.meta.env.VITE_API_URL}` : '';
+const _rawUrl = import.meta.env.VITE_API_URL || '';
+const API_BASE = _rawUrl ? (_rawUrl.startsWith('http://') || _rawUrl.startsWith('https://') ? _rawUrl : `https://${_rawUrl}`) : '';
 const ACCOUNTS_STORAGE_KEY = 'tourtec_registered_accounts';
 
 export function getLocalAccounts() {
